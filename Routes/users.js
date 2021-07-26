@@ -23,10 +23,17 @@ const transport = nodemailer.createTransport({
   //   pass: "d6dd156b5921fe892dab637e1704de78-c485922e-12fe8d47",
   // },
 
-  service: "gmail",
+//   service: "gmail",
+//   auth: {
+//     user: process.env.EMAIL,
+//     pass: process.env.PASSWORD,
+//   },
+  
+   host: "smtp.sendgrid.net",
+  port: 587,
   auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD,
+    user: "apikey",
+    pass: "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",
   },
 });
 
@@ -144,7 +151,7 @@ router.route("/signup").post(async (request, response) => {
     console.log(token);
     transport.sendMail({
       to: user.email,
-      from: "Dark<no-reply@accounts.dark.com>",
+     from: "prathameshsarode80@gmail.com",
       subject: `Signup Successful`,
       html: `
       <h1>Welcome, ${user.name} ${user.surname} To Dark Services</h1>
@@ -196,7 +203,7 @@ router.route("/reset").post(async (request, response) => {
 
       transport.sendMail({
         to: findUser.email,
-        from: "no-reply@dark.com",
+        from: "prathameshsarode80@gmail.com",
         subject: `To Reset Password`,
         html: `
                 <p>You Requested For Password Reset</p>
