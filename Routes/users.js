@@ -207,7 +207,7 @@ router.route("/reset").post(async (request, response) => {
         subject: `To Reset Password`,
         html: `
                 <p>You Requested For Password Reset</p>
-                <h5>Click on <a href="http://localhost:3000/reset/${token}">Link</a> , to RESET Password.</h5>
+                <h5>Click on <a href="https://password-reset-mail.netlify.app/reset/${token}">Link</a> , to RESET Password.</h5>
               `,
       });
       response.status(200).json({ message: "Email Send." });
