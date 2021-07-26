@@ -173,7 +173,7 @@ router.route("/verify").get(async (request, response) => {
     if (token) {
       const { id } = jwt.verify(token, "secretKey");
       await User.updateOne({ _id: id }, { confirm: true });
-      response.redirect("http://localhost:3000/signin");
+      response.redirect("https://password-reset-mail.herokuapp.com/signin");
     } else {
       response.status(401).json({ message: "Invalid Token" });
     }
