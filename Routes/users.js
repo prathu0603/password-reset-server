@@ -155,7 +155,7 @@ router.route("/signup").post(async (request, response) => {
       subject: `Signup Successful`,
       html: `
       <h1>Welcome, ${user.name} ${user.surname} To Dark Services</h1>
-      <h5>Click on <a href="http://localhost:5000/verify?token=${token}">Link</a> , To Activate Account.</h5>
+      <h5>Click on <a href="https://password-reset-mail.herokuapp.com/verify?token=${token}">Link</a> , To Activate Account.</h5>
       <p>Doing The Above Step Help US :)</p>
       `,
     });
