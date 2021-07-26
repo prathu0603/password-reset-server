@@ -29,11 +29,11 @@ const transport = nodemailer.createTransport({
 //     pass: process.env.PASSWORD,
 //   },
   
-   host: "smtp.sendgrid.net",
+   host: "in-v3.mailjet.com",
   port: 587,
   auth: {
-    user: "apikey",
-    pass: "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",
+    user: "36b10ee7a46a5c186d77bfe82bd5102b",
+    pass: "d4f2fe4931cc318e219e68cd3edc31ae",
   },
 });
 
